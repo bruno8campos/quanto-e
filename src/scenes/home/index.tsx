@@ -1,7 +1,7 @@
 import { SelectedPage } from "@/shared/types";
 import ActionButton from "@/shared/ActionButton";
 import useMediaQuery from "@/hooks/useMediaQuery";
-import Gato1 from "@./assets/gatinho1.png";
+import Gato1 from "@/assets/gatinho1.png";
 import AnchorLink from "react-anchor-link-smooth-scroll";
 import { motion } from "framer-motion";
 type Props = {
