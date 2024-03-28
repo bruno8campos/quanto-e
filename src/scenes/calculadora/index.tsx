@@ -1,12 +1,7 @@
-import { SelectedPage } from "@/shared/types";
 import CaixaCustoFixo from "./CaixaCustoFixo";
 import CaixaCustoVar from "./CaixaCustoVar";
 
-type Props = {
-  setSelectedPage: (value: SelectedPage) => void;
-};
-
-const Calculadora = ({ setSelectedPage }: Props) => {
+const Calculadora = () => {
   return (
     <section id="calculadora" className="gap-16 bg-white py-10">
       {/* Caixa da calculadora */}

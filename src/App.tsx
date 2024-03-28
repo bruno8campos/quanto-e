@@ -12,7 +12,7 @@ function App() {
     <div className="app bg-gray-50">
       <Navbar selectedPage={selectedPage} setSelectedPage={setSelectedPage} />
       <Home setSelectedPage={setSelectedPage} />
-      <Calculadora setSelectedPage={setSelectedPage} />
+      <Calculadora />
     </div>
   );
 }
