@@ -4,6 +4,7 @@ import Link from "./Link";
 import { SelectedPage } from "@/shared/types";
 import useMediaQuery from "@/hooks/useMediaQuery";
 import ActionButton from "@/shared/ActionButton";
+import Logo from "@/assets/favico.png";
 type Props = {
   selectedPage: SelectedPage;
   setSelectedPage: (value: SelectedPage) => void;
@@ -15,13 +16,13 @@ const Navbar = ({ selectedPage, setSelectedPage }: Props) => {
   const [isMenuToggled, setIsMenuToggled] = useState<boolean>(false);
   return (
     <nav>
-      <div
-        className={`${flexBetween} fixed top-0 z-30 w-full bg-slate-200 py-6`}
-      >
+      <div className={`${flexBetween} w-full bg-slate-200 py-6`}>
         <div className={`${flexBetween} mx-auto w-5/6 max-w-screen-md`}>
           <div className={`${flexBetween} w-full gap-6`}>
             {/*                 Lado Esquerdo */}
-            <div className={"h-5 w-5 bg-secondary-500"}></div>
+            <div className={""}>
+              <img className=" w-8" src={Logo} alt="Logo Quanto é" />
+            </div>
             {/*                 Lado Direito */}
             {isAboveMediumScreens ? (
               <div className={`${flexBetween} w-full`}>

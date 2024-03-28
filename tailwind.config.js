@@ -27,6 +27,7 @@ export default {
       },
     },
     screens: {
+      customh: { raw: "((min-height:750px) and (max-width:500px))" },
       xs: "480px",
       sm: "768px",
       md: "600px",
