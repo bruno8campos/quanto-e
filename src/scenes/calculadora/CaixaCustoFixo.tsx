@@ -2,7 +2,7 @@ const CaixaCustoFixo = () => {
   return (
     <div className="mt-5 h-32 rounded-2xl bg-gray-100 p-5 md:w-[32%]">
       <label
-        className=" mb-2 block cursor-text rounded-lg border p-1 text-lg hover:bg-gray-200"
+        className=" mb-2 block cursor-text rounded-lg border p-1 text-base hover:bg-gray-200"
         contentEditable
       >
         Transporte

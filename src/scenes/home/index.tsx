@@ -11,7 +11,7 @@ type Props = {
 const Home = ({ setSelectedPage }: Props) => {
   const isAboveMediumScreens = useMediaQuery("(min-width: 600px)");
   return (
-    <section id="home" className={"gap-16 bg-gray-50 py-10 md:h-full md:pb-0"}>
+    <section id="home" className={"bg-gray-50 py-3 md:h-full md:pb-0"}>
       {/* HomePage */}
       <div className="mx-auto w-5/6 max-w-3xl items-center justify-center md:flex md:h-5/6">
         {/* Cabeçalho, texto e botões */}
