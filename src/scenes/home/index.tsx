@@ -16,7 +16,7 @@ const Home = ({ setSelectedPage }: Props) => {
       <div className="mx-auto w-5/6 max-w-3xl items-center justify-center md:flex md:h-5/6">
         {/* Cabeçalho, texto e botões */}
         <motion.div
-          className="mt-20 customh:mt-32 md:-mt-10 md:basis-3/5"
+          className="mt-20 md:-mt-10 md:basis-3/5"
           onViewportEnter={() => setSelectedPage(SelectedPage.Home)}
           initial="hidden"
           whileInView="visible"
