@@ -11,7 +11,6 @@ type Props = {
 const CaixaCustoFixo = (props: Props) => {
   const deleteSelf = () => {
     props.setCustosFixos(props.custosFixos.filter((cf) => cf.id !== props.id));
-    console.log(props.custosFixos);
   };
 
   const handleChange = (event: any) => {
