@@ -1,27 +1,54 @@
 import { useState } from "react";
 
-type Props = {};
+type Props = {
+  setValorMaoDeObra: (value: number) => void;
+  setNumeroDeSessoes: (value: number) => void;
+  setValorEstudio: (value: number) => void;
+};
 
 const MaoDeObra = (props: Props) => {
-  const [valorHora, setValorHora] = useState<number>(0);
-  const [tempo, setTempo] = useState<number>(0);
-  const [sessoes, setSessoes] = useState<number>(0);
+  const [valorHora, setValorHora] = useState<number>(1);
+  const [tempo, setTempo] = useState<number>(1);
+  const [sessoes, setSessoes] = useState<number>(1);
+  const [complexDes, setComplexDes] = useState<number>(1.2);
+  const [complexLocalCorpo, setComplexLocalCorpo] = useState<number>(1.2);
 
-  console.log(valorHora);
-  console.log(tempo);
   console.log(sessoes);
-
-  console.log(props);
 
   const handleChangeValorHora = (event: any) => {
     setValorHora(event.target.value);
+    props.setValorMaoDeObra(
+      +event.target.value * +tempo * +complexDes * +complexLocalCorpo,
+    );
   };
   const handleChangeTempo = (event: any) => {
     setTempo(event.target.value);
+    props.setValorMaoDeObra(
+      +valorHora * +event.target.value * +complexDes * +complexLocalCorpo,
+    );
   };
 
   const handleChangeSessoes = (event: any) => {
     setSessoes(event.target.value);
+    props.setNumeroDeSessoes(event.target.value);
+  };
+
+  const handleChangeComplexDes = (event: any) => {
+    setComplexDes(event.target.value);
+    props.setValorMaoDeObra(
+      +valorHora * +tempo * +event.target.value * +complexLocalCorpo,
+    );
+  };
+
+  const handleChangeComplexLocalCorpo = (event: any) => {
+    setComplexLocalCorpo(event.target.value);
+    props.setValorMaoDeObra(
+      +valorHora * +tempo * +complexDes * +event.target.value,
+    );
+  };
+
+  const handleChangePorcentagemEstudio = (event: any) => {
+    props.setValorEstudio(event.target.value);
   };
 
   return (
@@ -81,6 +108,7 @@ const MaoDeObra = (props: Props) => {
           <p>5</p>
         </div>
         <input
+          onChange={handleChangeComplexDes}
           className="h-2 w-full cursor-pointer appearance-none rounded-lg accent-primary-100"
           min={1}
           max={1.4}
@@ -103,6 +131,7 @@ const MaoDeObra = (props: Props) => {
           <p>5</p>
         </div>
         <input
+          onChange={handleChangeComplexLocalCorpo}
           className="h-2 w-full cursor-pointer appearance-none rounded-lg accent-primary-100"
           min={1}
           max={1.4}
@@ -125,15 +154,27 @@ const MaoDeObra = (props: Props) => {
           <p>40%</p>
         </div>
         <input
+          onChange={handleChangePorcentagemEstudio}
           className="h-2 w-full cursor-pointer appearance-none rounded-lg accent-primary-100"
-          min={0.1}
-          max={0.5}
+          min={0}
+          max={0.4}
           step={0.1}
           type="range"
           name="porcentagem-estudio"
           id="porcentagem-estudio"
         />
       </div>
+      {/* Componente de Teste  */}
+      {/* <div className="relative mt-5 h-32 rounded-2xl bg-gray-100 p-5 md:w-[32%]">
+        <button
+          onClick={() => {
+            console.log(`Porcentagem Estúdio: ${PorcentagemEstudio}
+            Valor Estúdio: `);
+          }}
+        >
+          Print
+        </button>
+      </div> */}
     </div>
   );
 };

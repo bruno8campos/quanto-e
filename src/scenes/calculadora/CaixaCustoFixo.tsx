@@ -1,5 +1,5 @@
 import { CustoFixo } from "@/shared/types";
-import { TrashIcon } from "@heroicons/react/16/solid";
+/* import { TrashIcon } from "@heroicons/react/16/solid"; */
 
 type Props = {
   id: number;
@@ -9,9 +9,9 @@ type Props = {
 };
 
 const CaixaCustoFixo = (props: Props) => {
-  const deleteSelf = () => {
+  /* const deleteSelf = () => {
     props.setCustosFixos(props.custosFixos.filter((cf) => cf.id !== props.id));
-  };
+  }; */
 
   const handleChange = (event: any) => {
     const antigo = [...props.custosFixos];
@@ -38,10 +38,10 @@ const CaixaCustoFixo = (props: Props) => {
         onChange={handleChange}
         required
       />
-      <TrashIcon
+      {/* <TrashIcon
         onClick={deleteSelf}
         className=" absolute right-5 top-5 h-4 w-4 cursor-pointer"
-      ></TrashIcon>
+      ></TrashIcon> */}
     </div>
   );
 };

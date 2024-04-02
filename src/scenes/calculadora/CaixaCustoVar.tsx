@@ -1,5 +1,5 @@
 import { CustoVar } from "@/shared/types";
-import { TrashIcon } from "@heroicons/react/16/solid";
+/* import { TrashIcon } from "@heroicons/react/16/solid"; */
 type Props = {
   id: number;
   setCustosVar: (value: CustoVar[]) => void;
@@ -7,10 +7,9 @@ type Props = {
 };
 
 const CaixaCustoVar = (props: Props) => {
-  const deleteSelf = () => {
+  /*   const deleteSelf = () => {
     props.setCustosVar(props.custosVar.filter((cv) => cv.id !== props.id));
-    console.log(props.custosVar);
-  };
+  }; */
 
   const handleChange = (event: any) => {
     const antigo = [...props.custosVar];
@@ -20,10 +19,17 @@ const CaixaCustoVar = (props: Props) => {
         : cv,
     );
     props.setCustosVar(newCV);
-    console.log(`${event.target.value}`);
   };
 
-  const handleChangeQtd = () => {};
+  const handleChangeQtd = (event: any) => {
+    const antigo = [...props.custosVar];
+    const newCV = antigo.map((cv) =>
+      cv.id === props.id
+        ? { id: cv.id, value: cv.value, qtd: event.target.value }
+        : cv,
+    );
+    props.setCustosVar(newCV);
+  };
 
   return (
     <div className=" relative mt-5 h-32 rounded-2xl bg-gray-100 p-5 md:w-[32%]">
@@ -53,10 +59,10 @@ const CaixaCustoVar = (props: Props) => {
           required
         />
       </div>
-      <TrashIcon
+      {/*       <TrashIcon
         onClick={deleteSelf}
         className=" absolute right-5 top-5 h-4 w-4 cursor-pointer"
-      ></TrashIcon>
+      ></TrashIcon> */}
     </div>
   );
 };

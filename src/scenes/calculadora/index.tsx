@@ -22,6 +22,12 @@ const Calculadora = () => {
     },
   ]);
 
+  const [valorMaoDeObra, setValorMaoDeObra] = useState<number>(1);
+
+  const [numeroDeSessoes, setNumeroDeSessoes] = useState<number>(1);
+
+  const [valorEstudio, setValorEstudio] = useState<number>(0.2);
+
   const adicionarCustoFixo = () => {
     setCustosFixos([
       ...custosFixos,
@@ -120,14 +126,24 @@ const Calculadora = () => {
             <span className="text-primary-100">+</span> Mão de Obra
           </h1>
           {/* Componentes de Mão de Obra */}
-          <MaoDeObra />
+          <MaoDeObra
+            setValorEstudio={setValorEstudio}
+            setValorMaoDeObra={setValorMaoDeObra}
+            setNumeroDeSessoes={setNumeroDeSessoes}
+          />
         </div>
         {/* Caixa Orçamento */}
         <div className="mb-4 p-10">
           <h1 className="text-3xl font-bold">
             <span className="text-primary-100">=</span> Orçamento
           </h1>
-          <Orcamento />
+          <Orcamento
+            numeroDeSessoes={numeroDeSessoes}
+            valorMaoDeObra={valorMaoDeObra}
+            valorEstudio={valorEstudio}
+            custosVar={custosVar}
+            custosFixos={custosFixos}
+          />
         </div>
       </div>
     </section>
