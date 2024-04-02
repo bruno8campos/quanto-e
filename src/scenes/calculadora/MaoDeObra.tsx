@@ -7,6 +7,12 @@ const MaoDeObra = (props: Props) => {
   const [tempo, setTempo] = useState<number>(0);
   const [sessoes, setSessoes] = useState<number>(0);
 
+  console.log(valorHora);
+  console.log(tempo);
+  console.log(sessoes);
+
+  console.log(props);
+
   const handleChangeValorHora = (event: any) => {
     setValorHora(event.target.value);
   };

@@ -1,6 +1,7 @@
 type Props = {};
 
 const Orcamento = (props: Props) => {
+  console.log(props);
   return (
     <div className="items-center gap-[2%] md:flex md:flex-wrap">
       {/* Botão Calcular Orçamento */}
