@@ -1,6 +1,8 @@
 import { useState } from "react";
 import { CustoFixo } from "@/shared/types";
 import { CustoVar } from "@/shared/types";
+import Gato2 from "@/assets/gatinho2.png";
+
 type Props = {
   custosFixos: CustoFixo[];
   custosVar: CustoVar[];
@@ -42,66 +44,83 @@ const Orcamento = (props: Props) => {
       {mostrarOrcamento && (
         <div className="items-center gap-[2%] md:flex md:flex-wrap">
           {/* Orçamento Final */}
-          <div className="mt-5 flex h-32 items-center justify-center rounded-2xl border-4 border-gray-500 bg-gray-100 p-5 opacity-30 md:w-[32%]">
+          <div className="mt-5 flex h-32 items-center justify-center rounded-2xl border-4 border-gray-500 bg-gray-100 p-5 opacity-90 md:w-[32%]">
             <h1 className=" text-xl font-bold">
               Orçamento Final:{"\n"}
               <h2 className=" text-2xl font-bold">
                 R${" "}
-                {+props.valorMaoDeObra +
+                {(
+                  +props.valorMaoDeObra +
                   getCustosFixos(props.custosFixos) * +props.numeroDeSessoes +
-                  getCustosVar(props.custosVar)}
+                  getCustosVar(props.custosVar)
+                ).toFixed(2)}
               </h2>
             </h1>
           </div>
           {/* Porcentagem do Estúdio */}
-          <div className="mt-5 flex h-32 items-center justify-center rounded-2xl border-4 border-gray-500 bg-gray-100 p-5 opacity-30 md:w-[32%]">
+          <div className="mt-5 flex h-32 items-center justify-center rounded-2xl border-4 border-gray-500 bg-gray-100 p-5 opacity-60 md:w-[32%]">
             <h1 className=" text-xl font-bold">
               Porcentagem do Estúdio:{"\n"}
               <h2 className=" text-2xl font-bold">
                 R${" "}
-                {+props.valorEstudio *
+                {(
+                  +props.valorEstudio *
                   +(
                     +props.valorMaoDeObra +
                     getCustosFixos(props.custosFixos) * +props.numeroDeSessoes +
                     getCustosVar(props.custosVar)
-                  )}
+                  )
+                ).toFixed(2)}
               </h2>
             </h1>
           </div>
           {/* Lucro real */}
-          <div className="mt-5 flex h-32 items-center justify-center rounded-2xl border-4 border-gray-500 bg-gray-100 p-5 opacity-30 md:w-[32%]">
+          <div className="mt-5 flex h-32 items-center justify-center rounded-2xl border-4 border-gray-500 bg-gray-100 p-5 opacity-90 md:w-[32%]">
             <h1 className=" text-xl font-bold">
               Lucro Real:{"\n"}
               <h2 className=" text-2xl font-bold">
                 R${" "}
-                {+props.valorMaoDeObra -
+                {(
+                  +props.valorMaoDeObra -
                   +props.valorEstudio *
                     +(
                       +props.valorMaoDeObra +
                       getCustosFixos(props.custosFixos) *
                         +props.numeroDeSessoes +
                       getCustosVar(props.custosVar)
-                    )}
+                    )
+                ).toFixed(2)}
               </h2>
             </h1>
           </div>
           {/* Custos Fixos */}
-          <div className="mt-5 flex h-32 items-center justify-center rounded-2xl border-4 border-gray-500 bg-gray-100 p-5 opacity-30 md:w-[32%]">
+          <div className="mt-5 flex h-32 items-center justify-center rounded-2xl border-4 border-gray-500 bg-gray-100 p-5 opacity-60 md:w-[32%]">
             <h1 className=" text-xl font-bold">
               Custos Fixos:{"\n"}
               <h2 className=" text-2xl font-bold">
-                R$ {getCustosFixos(props.custosFixos) * props.numeroDeSessoes}
+                R${" "}
+                {(
+                  getCustosFixos(props.custosFixos) * props.numeroDeSessoes
+                ).toFixed(2)}
               </h2>
             </h1>
           </div>
           {/* Custos Variáveis */}
-          <div className="mt-5 flex h-32 items-center justify-center rounded-2xl border-4 border-gray-500 bg-gray-100 p-5 opacity-30 md:w-[32%]">
+          <div className="mt-5 flex h-32 items-center justify-center rounded-2xl border-4 border-gray-500 bg-gray-100 p-5 opacity-60 md:w-[32%]">
             <h1 className=" text-xl font-bold">
               Custos Variáveis:{"\n"}
               <h2 className=" text-2xl font-bold">
-                R$ {getCustosVar(props.custosVar)}
+                R$ {getCustosVar(props.custosVar).toFixed(2)}
               </h2>
             </h1>
+          </div>
+          {/* Gatinho Resultado Final */}
+          <div className="mt-5 flex h-32 items-center justify-center rounded-2xl p-5 md:w-[32%]">
+            <img
+              className=" w-44"
+              src={Gato2}
+              alt="Ilustração de Gato feliz com resultado"
+            />
           </div>
         </div>
       )}

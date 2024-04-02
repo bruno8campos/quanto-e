@@ -58,42 +58,54 @@ const MaoDeObra = (props: Props) => {
         <label className=" mb-2 block w-full rounded-lg border p-1 text-xs">
           Valor base da hora trabalhada
         </label>
-        <input
-          type="number"
-          id="hora-trabalho"
-          className="block w-full rounded-lg border border-gray-300 bg-white p-2.5 text-sm text-gray-500 focus:border-blue-500 focus:ring-blue-500"
-          placeholder="R$"
-          onChange={handleChangeValorHora}
-          required
-        />
+        <div className="relative mb-6">
+          <div className="pointer-events-none absolute inset-y-0 start-0 flex items-center ps-3.5">
+            <h1 className="font-bold text-gray-500 opacity-80">R$</h1>
+          </div>
+          <input
+            type="number"
+            id="custo-fixo"
+            className="block w-full rounded-lg border border-gray-300 bg-white p-2.5 ps-10 text-sm text-gray-500 "
+            placeholder="0"
+            onChange={handleChangeValorHora}
+          />
+        </div>
       </div>
       {/* Componente Tempo Estimado */}
       <div className="relative mt-5 h-32 rounded-2xl bg-gray-100 p-5 md:w-[32%]">
         <label className=" mb-2 block w-full rounded-lg border p-1 text-xs">
           Tempo em horas estimado
         </label>
-        <input
-          type="number"
-          id="hora-trabalho"
-          className="block w-full rounded-lg border border-gray-300 bg-white p-2.5 text-sm text-gray-500 focus:border-blue-500 focus:ring-blue-500"
-          placeholder="h"
-          onChange={handleChangeTempo}
-          required
-        />
+        <div className="relative mb-6">
+          <div className="pointer-events-none absolute inset-y-0 end-0 flex items-center pr-8">
+            <h1 className="font-bold text-gray-500 opacity-80">Horas</h1>
+          </div>
+          <input
+            type="number"
+            id="custo-fixo"
+            className="block w-full rounded-lg border border-gray-300 bg-white p-2.5 ps-2.5 text-sm text-gray-500 "
+            placeholder="0"
+            onChange={handleChangeTempo}
+          />
+        </div>
       </div>
       {/* Componente Sessões Estimadas */}
       <div className="relative mt-5 h-32 rounded-2xl bg-gray-100 p-5 md:w-[32%]">
         <label className=" mb-2 block w-full rounded-lg border p-1 text-xs">
           Número de sessões
         </label>
-        <input
-          type="number"
-          id="hora-trabalho"
-          className="block w-full rounded-lg border border-gray-300 bg-white p-2.5 text-sm text-gray-500 focus:border-blue-500 focus:ring-blue-500"
-          placeholder="x Qtd"
-          onChange={handleChangeSessoes}
-          required
-        />
+        <div className="relative mb-6">
+          <div className="pointer-events-none absolute inset-y-0 end-0 flex items-center pr-8">
+            <h1 className="font-bold text-gray-500 opacity-80">Sessões</h1>
+          </div>
+          <input
+            type="number"
+            id="custo-fixo"
+            className="block w-full rounded-lg border border-gray-300 bg-white p-2.5 ps-2.5 text-sm text-gray-500 "
+            placeholder="0"
+            onChange={handleChangeSessoes}
+          />
+        </div>
       </div>
       {/* Componente Complexidade Desenho */}
       <div className="relative mt-5 h-32 rounded-2xl bg-gray-100 p-5 md:w-[32%]">

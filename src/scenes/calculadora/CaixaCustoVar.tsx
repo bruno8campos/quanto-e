@@ -35,30 +35,40 @@ const CaixaCustoVar = (props: Props) => {
     <div className=" relative mt-5 h-32 rounded-2xl bg-gray-100 p-5 md:w-[32%]">
       <div>
         <label
-          className=" mb-2 block w-[90%] cursor-text rounded-lg border p-1 text-base hover:bg-gray-200"
+          className=" mb-2 block w-full cursor-text rounded-lg border p-1 text-base hover:bg-gray-200"
           contentEditable
         >
           Agulha
         </label>
       </div>
       <div className="flex justify-between">
-        <input
-          type="number"
-          id="custo-var"
-          className="block w-[60%] rounded-lg border border-gray-300 bg-white p-2.5 text-sm text-gray-500"
-          placeholder="R$"
-          onChange={handleChange}
-          required
-        />
-        <input
-          type="number"
-          id="qtdvar"
-          className="block w-[35%] rounded-lg border border-gray-300 bg-white p-2.5 text-sm text-gray-500"
-          placeholder="x Qtd"
-          onChange={handleChangeQtd}
-          required
-        />
+        <div className="relative mb-6 w-[60%]">
+          <div className="pointer-events-none absolute inset-y-0 start-0 flex items-center ps-3.5">
+            <h1 className="font-bold text-gray-500 opacity-80">R$</h1>
+          </div>
+          <input
+            type="number"
+            id="custo-var"
+            className="block w-full rounded-lg border border-gray-300 bg-white p-2.5 ps-10 text-sm text-gray-500 "
+            placeholder="0"
+            onChange={handleChange}
+          />
+        </div>
+
+        <div className="relative mb-6 w-[35%]">
+          <div className="pointer-events-none absolute inset-y-0 start-0 flex items-center ps-3.5">
+            <h1 className="font-bold text-gray-500 opacity-80">x</h1>
+          </div>
+          <input
+            type="number"
+            id="qtd"
+            className="block w-full rounded-lg border border-gray-300 bg-white p-2.5 ps-7 text-sm text-gray-500 "
+            placeholder="0"
+            onChange={handleChangeQtd}
+          />
+        </div>
       </div>
+
       {/*       <TrashIcon
         onClick={deleteSelf}
         className=" absolute right-5 top-5 h-4 w-4 cursor-pointer"
