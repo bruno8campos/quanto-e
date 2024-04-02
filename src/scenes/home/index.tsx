@@ -36,8 +36,8 @@ const Home = ({ setSelectedPage }: Props) => {
               Quero testar!
             </ActionButton>
             <AnchorLink
-              onClick={() => setSelectedPage(SelectedPage.Sobre)}
-              href={`${SelectedPage.Sobre}`}
+              onClick={() => setSelectedPage(SelectedPage.SaibaMais)}
+              href={`#${SelectedPage.Sobre}`}
               className="transition duration-500 hover:text-gray-400"
             >
               <p>Saiba mais</p>
@@ -55,9 +55,7 @@ const Home = ({ setSelectedPage }: Props) => {
       </div>
       <div>
         {isAboveMediumScreens && (
-          <div className="h-[100px] w-full bg-slate-200 py-10">
-            <div> </div>
-          </div>
+          <div className="h-[100px] w-full bg-slate-200"></div>
         )}
       </div>
     </section>

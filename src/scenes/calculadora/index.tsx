@@ -22,7 +22,7 @@ const Calculadora = () => {
     },
   ]);
 
-  const [valorMaoDeObra, setValorMaoDeObra] = useState<number>(1);
+  const [valorMaoDeObra, setValorMaoDeObra] = useState<number>(0);
 
   const [numeroDeSessoes, setNumeroDeSessoes] = useState<number>(1);
 
@@ -53,9 +53,9 @@ const Calculadora = () => {
   };
 
   return (
-    <section id="calculadora" className="gap-16 bg-white py-10">
+    <section id="calculadora" className="bg-white pt-10">
       {/* Caixa da calculadora */}
-      <div className="mx-auto h-auto w-5/6 items-center rounded-3xl bg-gray-50 drop-shadow-2xl">
+      <div className="mx-auto mb-24 mt-10 h-auto w-5/6 items-center rounded-3xl bg-gray-50 drop-shadow-2xl">
         {/* Caixa Custos Fixos */}
         <div className="mb-4 px-10 pt-10">
           <h1 className="text-3xl font-bold">
@@ -146,6 +146,7 @@ const Calculadora = () => {
           />
         </div>
       </div>
+      <div className="h-[100px] w-full bg-slate-200"></div>
     </section>
   );
 };

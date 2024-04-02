@@ -3,6 +3,7 @@ import Navbar from "./scenes/navbar";
 import { SelectedPage } from "./shared/types";
 import Home from "./scenes/home";
 import Calculadora from "./scenes/calculadora";
+import Sobre from "./scenes/sobre";
 
 function App() {
   const [selectedPage, setSelectedPage] = useState<SelectedPage>(
@@ -13,6 +14,7 @@ function App() {
       <Navbar selectedPage={selectedPage} setSelectedPage={setSelectedPage} />
       <Home setSelectedPage={setSelectedPage} />
       <Calculadora />
+      <Sobre />
     </div>
   );
 }
