@@ -3,6 +3,8 @@ import CaixaCustoFixo from "./CaixaCustoFixo";
 import CaixaCustoVar from "./CaixaCustoVar";
 import { CustoFixo } from "@/shared/types";
 import { CustoVar } from "@/shared/types";
+import MaoDeObra from "./MaoDeObra";
+import Orcamento from "./Orcamento";
 
 const Calculadora = () => {
   const [custosFixos, setCustosFixos] = useState<CustoFixo[]>([
@@ -16,7 +18,7 @@ const Calculadora = () => {
     {
       id: 1,
       value: 0,
-      qtd: 0,
+      qtd: 1,
     },
   ]);
 
@@ -39,7 +41,7 @@ const Calculadora = () => {
       {
         id: custosVar.length === 0 ? 1 : custosVar[custosVar.length - 1].id + 1,
         value: 0,
-        qtd: 0,
+        qtd: 1,
       },
     ]);
   };
@@ -78,14 +80,14 @@ const Calculadora = () => {
             </div>
 
             {/* Botão auxiliar dev Printar array de Componentes Custo Fixo */}
-            <div
+            {/* <div
               onClick={() => {
                 console.log(custosFixos);
               }}
               className=" mt-5 flex h-32 cursor-pointer items-center justify-center rounded-2xl border-4 border-gray-500 bg-gray-100 p-5 opacity-30 hover:opacity-50 active:opacity-40 md:w-[32%]"
             >
               <h1 className=" text-6xl font-bold">Print</h1>
-            </div>
+            </div> */}
           </div>
         </div>
         {/* Caixa Custos Variáveis */}
@@ -117,12 +119,15 @@ const Calculadora = () => {
           <h1 className="text-3xl font-bold">
             <span className="text-primary-100">+</span> Mão de Obra
           </h1>
+          {/* Componentes de Mão de Obra */}
+          <MaoDeObra />
         </div>
         {/* Caixa Orçamento */}
         <div className="mb-4 p-10">
           <h1 className="text-3xl font-bold">
             <span className="text-primary-100">=</span> Orçamento
           </h1>
+          <Orcamento />
         </div>
       </div>
     </section>
