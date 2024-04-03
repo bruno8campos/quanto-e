@@ -1,4 +1,4 @@
-![Caxi, um dos gatinhos do Quanto é](src/assets/gatinho22.png)
+![Caxi, um dos gatinhos do Quanto é](src/assets/gatinho223.png)
 
 # Quanto é
 
