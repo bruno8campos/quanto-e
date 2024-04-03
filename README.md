@@ -1,4 +1,4 @@
-![Kiwi, um dos gatinhos do Quanto é](src/assets/gatinho1.png =250x)
+![Kiwi, um dos gatinhos do Quanto é](src/assets/gatinho22.png)
 
 # Quanto é
 
